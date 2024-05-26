@@ -1,0 +1,47 @@
+{
+  "name": "remix-bunjs",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "build": "bun run --bun remix vite:build",
+    "db:generate": "bun drizzle-kit generate",
+    "db:migrate": "bun drizzle-kit migrate",
+    "dev": "bun run --bun remix vite:dev",
+    "format": "biome check --apply ./app ./db",
+    "lint": "biome lint --apply ./app ./db",
+    "start": "bun run --bun remix-serve ./build/server/index.js",
+    "test": "bun test --preload ./tests/setup.ts",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@lucia-auth/adapter-sqlite": "^3.0.1",
+    "@remix-run/node": "^2.9.2",
+    "@remix-run/react": "^2.9.2",
+    "@remix-run/serve": "^2.9.2",
+    "drizzle-orm": "^0.30.10",
+    "isbot": "^5.1.7",
+    "lucia": "^3.2.0",
+    "oslo": "^1.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tiny-invariant": "^1.3.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.7.3",
+    "@remix-run/dev": "^2.9.2",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "bun-types": "^1.1.10",
+    "drizzle-kit": "^0.21.4",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11 ",
+    "vite-tsconfig-paths": "^4.3.2"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "trustedDependencies": [
+    "@biomejs/biome"
+  ]
+}
